@@ -19,6 +19,10 @@
 		408B3571000400000000000A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000C /* SettingsViewModel.swift */; };
 		408B3571000400000000000B /* PrayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000D /* PrayerViewModel.swift */; };
 		408B3571000400000000000C /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000E /* LocationViewModel.swift */; };
+		408B3571000400000000000D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000F /* MainView.swift */; };
+		408B3571000400000000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000010 /* SettingsView.swift */; };
+		408B3571000400000000000F /* SunPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000011 /* SunPositionView.swift */; };
+		408B35710004000000000010 /* PrayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000012 /* PrayerListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,10 @@
 		408B3571000300000000000C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		408B3571000300000000000D /* PrayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewModel.swift; sourceTree = "<group>"; };
 		408B3571000300000000000E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		408B3571000300000000000F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		408B35710003000000000010 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		408B35710003000000000011 /* SunPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPositionView.swift; sourceTree = "<group>"; };
+		408B35710003000000000012 /* PrayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,8 @@
 		408B35710002000000000007 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				408B3571000300000000000F /* MainView.swift */,
+				408B35710003000000000010 /* SettingsView.swift */,
 				408B35710002000000000008 /* Components */,
 			);
 			path = Views;
@@ -121,6 +131,8 @@
 		408B35710002000000000008 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				408B35710003000000000011 /* SunPositionView.swift */,
+				408B35710003000000000012 /* PrayerListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +234,10 @@
 				408B3571000400000000000A /* SettingsViewModel.swift in Sources */,
 				408B3571000400000000000B /* PrayerViewModel.swift in Sources */,
 				408B3571000400000000000C /* LocationViewModel.swift in Sources */,
+				408B3571000400000000000D /* MainView.swift in Sources */,
+				408B3571000400000000000E /* SettingsView.swift in Sources */,
+				408B3571000400000000000F /* SunPositionView.swift in Sources */,
+				408B35710004000000000010 /* PrayerListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

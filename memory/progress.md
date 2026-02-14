@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 4 — Main UI Views (Next)
+## Current Phase: Phase 5 — Settings View (Next)
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -37,15 +37,22 @@
   - `LocationViewModel.swift` — searchText with 300ms debounce, searchResults, detectLocation() flow, selectResult() saves location + auto-detects method
   - All 3 files registered in pbxproj under ViewModels group
   - Build verified: **BUILD SUCCEEDED**
+- [x] Phase 4: Main UI Views
+  - `PrayerTimeApp.swift` — rewritten with `AppState` coordinator class, `MenuBarExtra(.window)` with dynamic label/symbol from PrayerViewModel, all dependencies injected via `.environmentObject()`
+  - `MainView.swift` — 320×420pt, header (city + date + gear), SunPositionView, Divider, PrayerListView, no-location prompt, settings toggle
+  - `SunPositionView.swift` — semicircle arc with Path, dashed horizon, gradient traversed arc, sun icon positioned via trigonometry, sunrise/sunset labels
+  - `PrayerListView.swift` — ForEach over entries, PrayerRow with icon/name/countdown/time, next=orange bg+semibold, current=blue, past=dimmed
+  - `SettingsView.swift` — placeholder with back button (Phase 5 will flesh out)
+  - All 4 new files + updated PrayerTimeApp registered in pbxproj
+  - Build verified: **BUILD SUCCEEDED**
 
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 4: Main UI Views (App entry, MainView, SunPositionView, PrayerListView)
 - [ ] Phase 5: Settings View
 - [ ] Phase 6: Floating Panel (NSPanel, FloatingPanelView, Manager)
 - [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
 
 ## Last Updated
-2026-02-13 — Phase 3 complete, build verified
+2026-02-13 — Phase 4 complete, build verified
