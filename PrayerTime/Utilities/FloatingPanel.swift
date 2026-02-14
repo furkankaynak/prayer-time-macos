@@ -30,4 +30,14 @@ final class FloatingPanel: NSPanel {
         let y = screenFrame.maxY - frame.height
         setFrameOrigin(NSPoint(x: x, y: y))
     }
+
+    static func notchWidth(for screen: NSScreen) -> CGFloat {
+        let screenFrame = screen.frame
+        if let left = screen.auxiliaryTopLeftArea,
+           let right = screen.auxiliaryTopRightArea {
+            let notchW = screenFrame.width - left.width - right.width
+            return max(notchW, 200)
+        }
+        return 200
+    }
 }
