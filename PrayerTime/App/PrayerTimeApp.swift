@@ -34,8 +34,14 @@ final class AppState: ObservableObject {
 
     private func observeFloatingPanel() {
         prayerViewModel.$shouldShowFloatingPanel
-            .removeDuplicates()
-            .sink { [weak self] shouldShow in
+            .combineLatest(
+                prayerViewModel.$nextPrayer,
+                prayerViewModel.$nextPrayerTime
+            )
+            .removeDuplicates { prev, curr in
+                prev.0 == curr.0 && prev.1 == curr.1 && prev.2 == curr.2
+            }
+            .sink { [weak self] shouldShow, _, _ in
                 guard let self else { return }
                 if shouldShow,
                    let prayer = self.prayerViewModel.nextPrayer,

@@ -24,6 +24,10 @@ final class SettingsViewModel: ObservableObject {
         didSet { persistFloatingPanel() }
     }
 
+    @Published var alwaysShowDynamicIsland: Bool {
+        didSet { persistAlwaysShowDynamicIsland() }
+    }
+
     private let calculationService = PrayerCalculationService()
     private let defaults = UserDefaults.standard
 
@@ -62,6 +66,13 @@ final class SettingsViewModel: ObservableObject {
         } else {
             self.showFloatingPanel = AppDefaults.showFloatingPanel
         }
+
+        // Load always show dynamic island
+        if defaults.object(forKey: AppSettingsKeys.alwaysShowDynamicIsland) != nil {
+            self.alwaysShowDynamicIsland = defaults.bool(forKey: AppSettingsKeys.alwaysShowDynamicIsland)
+        } else {
+            self.alwaysShowDynamicIsland = AppDefaults.alwaysShowDynamicIsland
+        }
     }
 
     func autoDetectMethod() {
@@ -98,5 +109,9 @@ final class SettingsViewModel: ObservableObject {
 
     private func persistFloatingPanel() {
         defaults.set(showFloatingPanel, forKey: AppSettingsKeys.showFloatingPanel)
+    }
+
+    private func persistAlwaysShowDynamicIsland() {
+        defaults.set(alwaysShowDynamicIsland, forKey: AppSettingsKeys.alwaysShowDynamicIsland)
     }
 }

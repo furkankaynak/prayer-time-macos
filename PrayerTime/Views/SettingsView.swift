@@ -200,6 +200,10 @@ struct SettingsView: View {
                 }
 
                 Toggle("Show floating panel", isOn: $settingsViewModel.showFloatingPanel)
+
+                if settingsViewModel.showFloatingPanel {
+                    Toggle("Always show Dynamic Island", isOn: $settingsViewModel.alwaysShowDynamicIsland)
+                }
             }
         }
     }

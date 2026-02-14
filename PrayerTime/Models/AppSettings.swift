@@ -9,6 +9,7 @@ struct AppSettingsKeys {
     static let madhab = "madhab"
     static let notificationMinutesBefore = "notificationMinutesBefore"
     static let showFloatingPanel = "showFloatingPanel"
+    static let alwaysShowDynamicIsland = "alwaysShowDynamicIsland"
 
     private init() {}
 }
@@ -114,6 +115,7 @@ struct AppDefaults {
     static let madhab: MadhabOption = .shafi
     static let notificationMinutesBefore: Int = 15
     static let showFloatingPanel: Bool = true
+    static let alwaysShowDynamicIsland: Bool = false
 
     private init() {}
 }

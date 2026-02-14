@@ -16,6 +16,7 @@ final class FloatingPanel: NSPanel {
         hasShadow = true
         hidesOnDeactivate = false
         collectionBehavior = [.canJoinAllSpaces, .stationary]
+        isMovable = false
         isMovableByWindowBackground = false
     }
 
@@ -24,9 +25,9 @@ final class FloatingPanel: NSPanel {
 
     func positionAtTopCenter() {
         guard let screen = NSScreen.main else { return }
-        let screenFrame = screen.frame
-        let x = screenFrame.midX - frame.width / 2
-        let y = screenFrame.maxY - frame.height - 6
+        let visibleFrame = screen.visibleFrame
+        let x = visibleFrame.midX - frame.width / 2
+        let y = visibleFrame.maxY - frame.height
         setFrameOrigin(NSPoint(x: x, y: y))
     }
 }

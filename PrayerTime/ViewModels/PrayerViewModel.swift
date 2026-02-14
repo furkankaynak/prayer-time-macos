@@ -191,6 +191,11 @@ final class PrayerViewModel: ObservableObject {
             return
         }
 
+        if settingsViewModel.alwaysShowDynamicIsland {
+            shouldShowFloatingPanel = true
+            return
+        }
+
         let minutesBefore = Double(settingsViewModel.notificationMinutesBefore)
         let triggerTime = time.addingTimeInterval(-minutesBefore * 60)
 
@@ -198,6 +203,8 @@ final class PrayerViewModel: ObservableObject {
             shouldShowFloatingPanel = true
             floatingPanelShownForPrayer = prayer
         } else if now >= time {
+            shouldShowFloatingPanel = false
+        } else {
             shouldShowFloatingPanel = false
         }
     }
