@@ -30,11 +30,11 @@ struct FloatingPanelView: View {
             .frame(width: 320, height: 52)
             .background(
                 Color(red: 0.027, green: 0.027, blue: 0.027),
-                in: Capsule()
+                in: RoundedRectangle(cornerRadius: 26, style: .continuous)
             )
             .shadow(color: .black.opacity(0.40), radius: 12, y: 6)
             .overlay {
-                Capsule()
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
                     .stroke(
                         .white.opacity(0.04),
                         lineWidth: 0.5
