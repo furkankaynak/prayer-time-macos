@@ -12,7 +12,7 @@
   - Visible across all Spaces (.canJoinAllSpaces + .stationary)
   - canBecomeKey/canBecomeMain = false
   - hidesOnDeactivate = false
-- Capsule shape, 320x52pt
+- Capsule shape with refined geometry: width 360pt, height matched to current menu bar height
 - Auto-dismisses when prayer time arrives
 - Click to dismiss
 - SwiftUI content via NSHostingView
@@ -31,6 +31,7 @@
 ## Critical Implementation Details
 - **Window level MUST be `.statusBar`** — `.floating` puts it below menu bar, `.statusBar` puts it above
 - **Positioning MUST use `screen.frame`** — `visibleFrame` excludes menu bar area, `screen.frame` includes full screen
+- Positioning method remains unchanged; only content geometry/alignment was refined
 - NSPanel `hasShadow = true` — AppKit-level shadow for the window itself
 - SwiftUI shadow is additional visual layer on the capsule content
 
@@ -38,6 +39,7 @@
 - Phase 6: initial implementation with basic styling (Color.black, RoundedRectangle, single shadow)
 - Phase 7: accessibility labels, hint, button trait added
 - Post-phase: `level` changed from `.floating` to `.statusBar`, positioning from `visibleFrame` to `screen.frame`
+- 2026-02-14: Updated panel to derive height from menu bar height, widened content to 360pt, applied space-between-style layout with 24pt side padding, kept prayer icon+name grouped on the left, reserved a fixed 120pt empty center notch-safe zone, and reduced typography size
 - Styling refinement branch: `feature/dynamic-island-styling` — updates to match design reference
 
 ## Open Issues

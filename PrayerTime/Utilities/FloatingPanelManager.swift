@@ -4,16 +4,24 @@ import SwiftUI
 @MainActor
 final class FloatingPanelManager {
 
+    private let panelWidth: CGFloat = 360
+    private let minimumPanelHeight: CGFloat = 28
+    private let fallbackPanelHeight: CGFloat = 52
+
     private var panel: FloatingPanel?
     private var autoDismissTask: Task<Void, Never>?
 
     func show(prayerName: String, prayerSymbol: String, prayerTime: Date, onDismiss: @escaping () -> Void) {
         dismiss()
 
+        let panelHeight = currentMenuBarHeight()
+
         let view = FloatingPanelView(
             prayerName: prayerName,
             prayerSymbol: prayerSymbol,
             prayerTime: prayerTime,
+            panelWidth: panelWidth,
+            panelHeight: panelHeight,
             onDismiss: { [weak self] in
                 self?.dismiss()
                 onDismiss()
@@ -21,7 +29,7 @@ final class FloatingPanelManager {
         )
 
         let hostingView = NSHostingView(rootView: view)
-        hostingView.frame = NSRect(x: 0, y: 0, width: 320, height: 52)
+        hostingView.frame = NSRect(x: 0, y: 0, width: panelWidth, height: panelHeight)
 
         let floatingPanel = FloatingPanel(contentRect: hostingView.frame)
         floatingPanel.contentView = hostingView
@@ -47,5 +55,11 @@ final class FloatingPanelManager {
         autoDismissTask = nil
         panel?.close()
         panel = nil
+    }
+
+    private func currentMenuBarHeight() -> CGFloat {
+        guard let screen = NSScreen.main else { return fallbackPanelHeight }
+        let menuBarHeight = screen.frame.height - screen.visibleFrame.height
+        return max(menuBarHeight, minimumPanelHeight)
     }
 }
