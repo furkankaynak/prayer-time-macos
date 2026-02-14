@@ -73,7 +73,8 @@
   - Build verified: **BUILD SUCCEEDED**
 
 ## In Progress
-_None_
+- Dynamic Island styling refinement — branch `feature/dynamic-island-styling` (capsule shape, #070707 surface, rim light, soft shadow)
+- FloatingPanel.swift: `level = .statusBar` + `screen.frame` positioning committed to main (was previously uncommitted)
 
 ## Remaining Phases
 _All phases complete._
@@ -84,4 +85,4 @@ _All phases complete._
 - Localization
 
 ## Last Updated
-2026-02-13 — Phase 7 complete, all phases done, build verified
+2026-02-13 — FloatingPanel positioning fix committed to main, Dynamic Island styling in progress on feature branch
