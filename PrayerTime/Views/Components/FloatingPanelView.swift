@@ -28,8 +28,18 @@ struct FloatingPanelView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 14)
             .frame(width: 320, height: 52)
-            .background(Color.black, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .shadow(color: .black.opacity(0.3), radius: 8, y: 4)
+            .background(
+                Color(red: 0.027, green: 0.027, blue: 0.027),
+                in: Capsule()
+            )
+            .shadow(color: .black.opacity(0.40), radius: 12, y: 6)
+            .overlay {
+                Capsule()
+                    .stroke(
+                        .white.opacity(0.04),
+                        lineWidth: 0.5
+                    )
+            }
         }
         .onTapGesture {
             onDismiss()
