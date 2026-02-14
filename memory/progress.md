@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 3 — ViewModels (Next)
+## Current Phase: Phase 4 — Main UI Views (Next)
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -31,16 +31,21 @@
   - `NotificationService.swift` — `@MainActor` ObservableObject, `requestAuthorization()`, `scheduleNotifications(for:minutesBefore:timeZone:)` with UNCalendarNotificationTrigger, skips Sunrise, `cancelAllNotifications()`
   - All 3 files registered in pbxproj under Services group
   - Build verified: **BUILD SUCCEEDED**
+- [x] Phase 3: ViewModels
+  - `SettingsViewModel.swift` — `@MainActor` ObservableObject, `@Published` properties persisted via UserDefaults didSet, `autoDetectMethod()` via PrayerCalculationService
+  - `PrayerViewModel.swift` — central hub, 1s Timer.publish, currentPrayer/nextPrayer/countdownText/menuBarText/sunProgress, after-Isha→tomorrow's Fajr, midnight recalculation, wake-from-sleep via NSWorkspace.didWakeNotification, floating panel trigger
+  - `LocationViewModel.swift` — searchText with 300ms debounce, searchResults, detectLocation() flow, selectResult() saves location + auto-detects method
+  - All 3 files registered in pbxproj under ViewModels group
+  - Build verified: **BUILD SUCCEEDED**
 
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 3: ViewModels (Prayer, Settings, Location)
 - [ ] Phase 4: Main UI Views (App entry, MainView, SunPositionView, PrayerListView)
 - [ ] Phase 5: Settings View
 - [ ] Phase 6: Floating Panel (NSPanel, FloatingPanelView, Manager)
 - [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
 
 ## Last Updated
-2026-02-13 — Phase 2 complete, build verified
+2026-02-13 — Phase 3 complete, build verified

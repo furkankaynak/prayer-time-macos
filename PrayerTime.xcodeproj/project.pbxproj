@@ -16,6 +16,9 @@
 		408B35710004000000000007 /* PrayerCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000009 /* PrayerCalculationService.swift */; };
 		408B35710004000000000008 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000A /* LocationService.swift */; };
 		408B35710004000000000009 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000B /* NotificationService.swift */; };
+		408B3571000400000000000A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000C /* SettingsViewModel.swift */; };
+		408B3571000400000000000B /* PrayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000D /* PrayerViewModel.swift */; };
+		408B3571000400000000000C /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000E /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		408B35710003000000000009 /* PrayerCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCalculationService.swift; sourceTree = "<group>"; };
 		408B3571000300000000000A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		408B3571000300000000000B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		408B3571000300000000000C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		408B3571000300000000000D /* PrayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerViewModel.swift; sourceTree = "<group>"; };
+		408B3571000300000000000E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		408B35710002000000000006 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				408B3571000300000000000C /* SettingsViewModel.swift */,
+				408B3571000300000000000D /* PrayerViewModel.swift */,
+				408B3571000300000000000E /* LocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -210,6 +219,9 @@
 				408B35710004000000000007 /* PrayerCalculationService.swift in Sources */,
 				408B35710004000000000008 /* LocationService.swift in Sources */,
 				408B35710004000000000009 /* NotificationService.swift in Sources */,
+				408B3571000400000000000A /* SettingsViewModel.swift in Sources */,
+				408B3571000400000000000B /* PrayerViewModel.swift in Sources */,
+				408B3571000400000000000C /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
