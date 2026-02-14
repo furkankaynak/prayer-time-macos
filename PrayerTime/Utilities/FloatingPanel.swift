@@ -10,7 +10,7 @@ final class FloatingPanel: NSPanel {
             defer: true
         )
 
-        level = .floating
+        level = .statusBar
         isOpaque = false
         backgroundColor = .clear
         hasShadow = true
@@ -25,9 +25,9 @@ final class FloatingPanel: NSPanel {
 
     func positionAtTopCenter() {
         guard let screen = NSScreen.main else { return }
-        let visibleFrame = screen.visibleFrame
-        let x = visibleFrame.midX - frame.width / 2
-        let y = visibleFrame.maxY - frame.height
+        let screenFrame = screen.frame
+        let x = screenFrame.midX - frame.width / 2
+        let y = screenFrame.maxY - frame.height
         setFrameOrigin(NSPoint(x: x, y: y))
     }
 }
