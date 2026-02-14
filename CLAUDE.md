@@ -37,6 +37,19 @@ xcodebuild -scheme PrayerTime -configuration Release build
 open PrayerTime.xcodeproj
 ```
 
+## Git Workflow
+
+Each phase or feature is implemented on its own branch:
+
+1. `git checkout main && git pull origin main` — start from latest main
+2. `git checkout -b feature/<phase-or-feature-name>` — create feature branch
+3. Implement, build, verify
+4. `git add <files> && git commit` — commit changes
+5. `git push -u origin feature/<phase-or-feature-name>` — push branch
+6. `git checkout main` — return to main when done
+
+Branch naming: `feature/phase-5-settings-view`, `feature/phase-6-floating-panel`, etc.
+
 ## Dependencies
 
 - **Adhan Swift** (`https://github.com/batoulapps/adhan-swift`): Prayer time calculation via SPM
