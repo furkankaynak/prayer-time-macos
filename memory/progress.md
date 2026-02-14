@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 5 — Settings View (Next)
+## Current Phase: Phase 6 — Floating Panel (Next)
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -45,14 +45,21 @@
   - `SettingsView.swift` — placeholder with back button (Phase 5 will flesh out)
   - All 4 new files + updated PrayerTimeApp registered in pbxproj
   - Build verified: **BUILD SUCCEEDED**
+- [x] Phase 5: Settings View
+  - `SettingsView.swift` — full implementation replacing placeholder
+  - Location section: current location display, city search TextField, search results list, "Use My Location" button (hidden if denied), error display
+  - Calculation Method section: Picker for 12 methods, segmented Picker for madhab (Shafi/Hanafi)
+  - Notifications section: enable button if not authorized, Stepper for minutes-before (0–60, step 5), Toggle for floating panel
+  - About section: app name + version from Bundle
+  - ScrollView layout within 320×420pt menu bar panel
+  - Build verified: **BUILD SUCCEEDED**
 
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 5: Settings View
 - [ ] Phase 6: Floating Panel (NSPanel, FloatingPanelView, Manager)
 - [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
 
 ## Last Updated
-2026-02-13 — Phase 4 complete, build verified
+2026-02-13 — Phase 5 complete, build verified
