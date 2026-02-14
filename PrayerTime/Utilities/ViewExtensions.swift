@@ -7,4 +7,11 @@ extension View {
         self
             .background(.ultraThinMaterial, in: Capsule())
     }
+
+    @ViewBuilder
+    func adaptiveBackground() -> some View {
+        // TODO: Add .glassEffect(.regular, in: .rect) for macOS 26+ when SDK is available
+        self
+            .background(.ultraThinMaterial)
+    }
 }

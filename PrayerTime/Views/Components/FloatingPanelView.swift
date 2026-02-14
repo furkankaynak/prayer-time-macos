@@ -32,6 +32,10 @@ struct FloatingPanelView: View {
         .onTapGesture {
             onDismiss()
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(prayerName) prayer reminder")
+        .accessibilityHint("Tap to dismiss")
+        .accessibilityAddTraits(.isButton)
     }
 
     private func countdownText(at now: Date) -> String {

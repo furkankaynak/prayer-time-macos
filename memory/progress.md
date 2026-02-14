@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 7 — Polish (Next)
+## Current Phase: All phases complete
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -63,11 +63,25 @@
   - All 4 new files registered in pbxproj (Utilities + Components groups)
   - Build verified: **BUILD SUCCEEDED**
 
+- [x] Phase 7: Polish
+  - `ViewExtensions.swift` — added `adaptiveBackground()` modifier for main view container
+  - `MainView.swift` — applied `adaptiveBackground()`, added slide transitions between prayer/settings views, accessibility label on settings button, sun position accessibility value
+  - `SunPositionView.swift` — sun icon animation on progress change, accessibility labels on sunrise/sunset time labels
+  - `PrayerListView.swift` — animation on next prayer transitions, combined accessibility elements on PrayerRow with descriptive labels (prayer name, time, current/next status, countdown)
+  - `FloatingPanelView.swift` — accessibility label, hint, and button trait for dismiss gesture
+  - Liquid Glass deferred until macOS 26 SDK is available (TODO markers in ViewExtensions)
+  - Build verified: **BUILD SUCCEEDED**
+
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
+_All phases complete._
+
+## Future Work
+- Liquid Glass: update `adaptiveGlass()` and `adaptiveBackground()` when macOS 26 SDK ships
+- App icon design
+- Localization
 
 ## Last Updated
-2026-02-13 — Phase 6 complete, build verified
+2026-02-13 — Phase 7 complete, all phases done, build verified

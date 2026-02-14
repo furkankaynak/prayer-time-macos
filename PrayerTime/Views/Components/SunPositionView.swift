@@ -56,6 +56,7 @@ struct SunPositionView: View {
                         .foregroundStyle(.yellow)
                         .shadow(color: .orange.opacity(0.5), radius: 4)
                         .position(sunPosition)
+                        .animation(.easeInOut(duration: 1), value: progress)
                 }
             }
             .frame(height: 80)
@@ -65,10 +66,12 @@ struct SunPositionView: View {
                 Text(sunriseTime)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
+                    .accessibilityLabel("Sunrise \(sunriseTime)")
                 Spacer()
                 Text(sunsetTime)
                     .font(.caption2)
                     .foregroundStyle(.secondary)
+                    .accessibilityLabel("Sunset \(sunsetTime)")
             }
             .padding(.horizontal, 20)
         }

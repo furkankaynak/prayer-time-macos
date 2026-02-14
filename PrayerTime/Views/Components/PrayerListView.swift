@@ -20,6 +20,7 @@ struct PrayerListView: View {
             }
         }
         .padding(.horizontal, 8)
+        .animation(.easeInOut(duration: 0.3), value: nextPrayer)
     }
 }
 
@@ -66,6 +67,8 @@ struct PrayerRow: View {
         .padding(.vertical, 7)
         .background(rowBackground)
         .clipShape(RoundedRectangle(cornerRadius: 6))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(accessibilityDescription)
     }
 
     private var iconColor: Color {
@@ -87,5 +90,15 @@ struct PrayerRow: View {
         } else {
             Color.clear
         }
+    }
+
+    private var accessibilityDescription: String {
+        var parts = ["\(entry.displayName) at \(entry.formattedTime)"]
+        if isNext, let countdown = countdownText, !countdown.isEmpty {
+            parts.append("next prayer in \(countdown)")
+        } else if isCurrent {
+            parts.append("current prayer")
+        }
+        return parts.joined(separator: ", ")
     }
 }

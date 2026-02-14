@@ -11,11 +11,15 @@ struct MainView: View {
         VStack(spacing: 0) {
             if showSettings {
                 SettingsView(showSettings: $showSettings)
+                    .transition(.move(edge: .trailing))
             } else {
                 prayerContent
+                    .transition(.move(edge: .leading))
             }
         }
         .frame(width: 320, height: 420)
+        .adaptiveBackground()
+        .animation(.easeInOut(duration: 0.25), value: showSettings)
     }
 
     private var prayerContent: some View {
@@ -32,6 +36,9 @@ struct MainView: View {
             )
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Sun position")
+            .accessibilityValue(sunAccessibilityValue)
 
             Divider()
                 .padding(.horizontal, 16)
@@ -72,6 +79,7 @@ struct MainView: View {
                     .foregroundStyle(.secondary)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel("Settings")
         }
     }
 
@@ -95,6 +103,11 @@ struct MainView: View {
 
     private var dateString: String {
         Self.dateFormatter.string(from: Date())
+    }
+
+    private var sunAccessibilityValue: String {
+        let percent = Int(prayerViewModel.sunProgress * 100)
+        return "\(percent) percent through daylight"
     }
 
     private static let dateFormatter: DateFormatter = {
