@@ -21,7 +21,7 @@ final class FloatingPanelManager {
         )
 
         let hostingView = NSHostingView(rootView: view)
-        hostingView.frame = NSRect(x: 0, y: 0, width: 300, height: 56)
+        hostingView.frame = NSRect(x: 0, y: 0, width: 320, height: 52)
 
         let floatingPanel = FloatingPanel(contentRect: hostingView.frame)
         floatingPanel.contentView = hostingView

@@ -17,17 +17,19 @@ struct FloatingPanelView: View {
 
                 Text(prayerName)
                     .font(.headline)
+                    .foregroundStyle(.white)
 
                 Spacer()
 
                 Text(countdownText(at: context.date))
                     .font(.system(.title3, design: .monospaced))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.white.opacity(0.7))
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 14)
-            .frame(width: 300, height: 56)
-            .adaptiveGlass()
+            .frame(width: 320, height: 52)
+            .background(Color.black, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .shadow(color: .black.opacity(0.3), radius: 8, y: 4)
         }
         .onTapGesture {
             onDismiss()
