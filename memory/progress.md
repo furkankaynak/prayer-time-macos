@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 2 — Services (Next)
+## Current Phase: Phase 3 — ViewModels (Next)
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -25,12 +25,17 @@
   - `LocationModel.swift` — `SavedLocation` (Codable, Equatable), `LocationSearchResult` (with CLPlacemark factory init)
   - All 3 files registered in pbxproj under Models group
   - Build verified: **BUILD SUCCEEDED**
+- [x] Phase 2: Services
+  - `PrayerCalculationService.swift` — pure computation, `calculatePrayerTimes(for:on:method:madhab:)`, `recommendedMethod(for:)` timezone-to-method mapping, high latitude rule support
+  - `LocationService.swift` — `@MainActor` ObservableObject, CLLocationManagerDelegate, `requestLocation()` auto-detect, `searchLocations(query:)` async geocoding, reverse geocode for city/country/timezone
+  - `NotificationService.swift` — `@MainActor` ObservableObject, `requestAuthorization()`, `scheduleNotifications(for:minutesBefore:timeZone:)` with UNCalendarNotificationTrigger, skips Sunrise, `cancelAllNotifications()`
+  - All 3 files registered in pbxproj under Services group
+  - Build verified: **BUILD SUCCEEDED**
 
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 2: Services (PrayerCalculation, Location, Notification)
 - [ ] Phase 3: ViewModels (Prayer, Settings, Location)
 - [ ] Phase 4: Main UI Views (App entry, MainView, SunPositionView, PrayerListView)
 - [ ] Phase 5: Settings View
@@ -38,4 +43,4 @@ _None_
 - [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
 
 ## Last Updated
-2026-02-13 — Phase 1 complete, build verified
+2026-02-13 — Phase 2 complete, build verified

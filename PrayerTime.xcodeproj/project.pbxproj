@@ -13,6 +13,9 @@
 		408B35710004000000000004 /* PrayerTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000006 /* PrayerTimeModel.swift */; };
 		408B35710004000000000005 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000007 /* LocationModel.swift */; };
 		408B35710004000000000006 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000008 /* AppSettings.swift */; };
+		408B35710004000000000007 /* PrayerCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000009 /* PrayerCalculationService.swift */; };
+		408B35710004000000000008 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000A /* LocationService.swift */; };
+		408B35710004000000000009 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B3571000300000000000B /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		408B35710003000000000006 /* PrayerTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeModel.swift; sourceTree = "<group>"; };
 		408B35710003000000000007 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		408B35710003000000000008 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		408B35710003000000000009 /* PrayerCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCalculationService.swift; sourceTree = "<group>"; };
+		408B3571000300000000000A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		408B3571000300000000000B /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,9 @@
 		408B35710002000000000009 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				408B35710003000000000009 /* PrayerCalculationService.swift */,
+				408B3571000300000000000A /* LocationService.swift */,
+				408B3571000300000000000B /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -198,6 +207,9 @@
 				408B35710004000000000004 /* PrayerTimeModel.swift in Sources */,
 				408B35710004000000000005 /* LocationModel.swift in Sources */,
 				408B35710004000000000006 /* AppSettings.swift in Sources */,
+				408B35710004000000000007 /* PrayerCalculationService.swift in Sources */,
+				408B35710004000000000008 /* LocationService.swift in Sources */,
+				408B35710004000000000009 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
