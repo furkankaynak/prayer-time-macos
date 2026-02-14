@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 @MainActor
 final class AppState: ObservableObject {
@@ -7,6 +8,9 @@ final class AppState: ObservableObject {
     let notificationService: NotificationService
     let prayerViewModel: PrayerViewModel
     let locationViewModel: LocationViewModel
+    let floatingPanelManager = FloatingPanelManager()
+
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
         let settings = SettingsViewModel()
@@ -24,6 +28,31 @@ final class AppState: ObservableObject {
             locationService: location,
             settingsViewModel: settings
         )
+
+        observeFloatingPanel()
+    }
+
+    private func observeFloatingPanel() {
+        prayerViewModel.$shouldShowFloatingPanel
+            .removeDuplicates()
+            .sink { [weak self] shouldShow in
+                guard let self else { return }
+                if shouldShow,
+                   let prayer = self.prayerViewModel.nextPrayer,
+                   let time = self.prayerViewModel.nextPrayerTime {
+                    self.floatingPanelManager.show(
+                        prayerName: prayer.displayName,
+                        prayerSymbol: prayer.sfSymbol,
+                        prayerTime: time,
+                        onDismiss: { [weak self] in
+                            self?.prayerViewModel.dismissFloatingPanel()
+                        }
+                    )
+                } else {
+                    self.floatingPanelManager.dismiss()
+                }
+            }
+            .store(in: &cancellables)
     }
 }
 

@@ -23,6 +23,10 @@
 		408B3571000400000000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000010 /* SettingsView.swift */; };
 		408B3571000400000000000F /* SunPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000011 /* SunPositionView.swift */; };
 		408B35710004000000000010 /* PrayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000012 /* PrayerListView.swift */; };
+		408B35710004000000000011 /* FloatingPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000013 /* FloatingPanel.swift */; };
+		408B35710004000000000012 /* FloatingPanelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000014 /* FloatingPanelManager.swift */; };
+		408B35710004000000000013 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000015 /* ViewExtensions.swift */; };
+		408B35710004000000000014 /* FloatingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408B35710003000000000016 /* FloatingPanelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		408B35710003000000000010 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		408B35710003000000000011 /* SunPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunPositionView.swift; sourceTree = "<group>"; };
 		408B35710003000000000012 /* PrayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerListView.swift; sourceTree = "<group>"; };
+		408B35710003000000000013 /* FloatingPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanel.swift; sourceTree = "<group>"; };
+		408B35710003000000000014 /* FloatingPanelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanelManager.swift; sourceTree = "<group>"; };
+		408B35710003000000000015 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		408B35710003000000000016 /* FloatingPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingPanelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			children = (
 				408B35710003000000000011 /* SunPositionView.swift */,
 				408B35710003000000000012 /* PrayerListView.swift */,
+				408B35710003000000000016 /* FloatingPanelView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -150,6 +159,9 @@
 		408B3571000200000000000A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				408B35710003000000000013 /* FloatingPanel.swift */,
+				408B35710003000000000014 /* FloatingPanelManager.swift */,
+				408B35710003000000000015 /* ViewExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -238,6 +250,10 @@
 				408B3571000400000000000E /* SettingsView.swift in Sources */,
 				408B3571000400000000000F /* SunPositionView.swift in Sources */,
 				408B35710004000000000010 /* PrayerListView.swift in Sources */,
+				408B35710004000000000011 /* FloatingPanel.swift in Sources */,
+				408B35710004000000000012 /* FloatingPanelManager.swift in Sources */,
+				408B35710004000000000013 /* ViewExtensions.swift in Sources */,
+				408B35710004000000000014 /* FloatingPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

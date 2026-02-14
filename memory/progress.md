@@ -1,6 +1,6 @@
 # Project Progress
 
-## Current Phase: Phase 6 — Floating Panel (Next)
+## Current Phase: Phase 7 — Polish (Next)
 
 ## Completed
 - [x] PRD written (`docs/PRD.md`)
@@ -54,12 +54,20 @@
   - ScrollView layout within 320×420pt menu bar panel
   - Build verified: **BUILD SUCCEEDED**
 
+- [x] Phase 6: Floating Panel
+  - `FloatingPanel.swift` — NSPanel subclass, .nonactivatingPanel + .borderless + .fullSizeContentView, .floating level, canBecomeKey/canBecomeMain = false, hidesOnDeactivate = false, .canJoinAllSpaces + .stationary, positionAtTopCenter()
+  - `FloatingPanelView.swift` — capsule HStack (300×56pt), prayer icon + name + countdown via TimelineView, .adaptiveGlass(), tap to dismiss
+  - `FloatingPanelManager.swift` — @MainActor, show() creates panel with NSHostingView, auto-dismiss Task at prayer time, dismiss() closes panel
+  - `ViewExtensions.swift` — adaptiveGlass() modifier, .ultraThinMaterial in Capsule fallback (Liquid Glass TODO for macOS 26 SDK)
+  - `PrayerTimeApp.swift` — AppState updated with FloatingPanelManager, observes shouldShowFloatingPanel via Combine
+  - All 4 new files registered in pbxproj (Utilities + Components groups)
+  - Build verified: **BUILD SUCCEEDED**
+
 ## In Progress
 _None_
 
 ## Remaining Phases
-- [ ] Phase 6: Floating Panel (NSPanel, FloatingPanelView, Manager)
 - [ ] Phase 7: Polish (Liquid Glass, animations, accessibility)
 
 ## Last Updated
-2026-02-13 — Phase 5 complete, build verified
+2026-02-13 — Phase 6 complete, build verified
