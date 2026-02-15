@@ -75,6 +75,7 @@
 ## In Progress
 - Dynamic Island styling refinement — branch `feature/dynamic-island-styling` (capsule shape, #070707 surface, rim light, soft shadow)
 - Dynamic Island layout refinement on main — menu-bar-height panel, wider 360pt content, space-between layout with 24pt side padding, icon+name grouped on left, 120pt empty center notch-safe zone, smaller typography
+- Dynamic Island opening animation — branch `feature/dynamic-island-open-animation` (fixed 300pt collapsed width -> 360pt spring expansion in 300ms, content reveal after expansion)
 - FloatingPanel.swift: `level = .statusBar` + `screen.frame` positioning committed to main (was previously uncommitted)
 
 ## Remaining Phases
@@ -86,4 +87,4 @@ _All phases complete._
 - Localization
 
 ## Last Updated
-2026-02-14 — Refined Dynamic Island layout (menu bar height, 360pt width, 24pt side padding, icon+name grouping, fixed 120pt empty center notch-safe zone, smaller font sizes), build verified
+2026-02-14 — Finalized Dynamic Island opening animation (300pt -> 360pt spring in 300ms with post-expand content reveal); kill/rebuild/run verified

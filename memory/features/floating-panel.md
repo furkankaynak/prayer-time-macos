@@ -40,6 +40,7 @@
 - Phase 7: accessibility labels, hint, button trait added
 - Post-phase: `level` changed from `.floating` to `.statusBar`, positioning from `visibleFrame` to `screen.frame`
 - 2026-02-14: Updated panel to derive height from menu bar height, widened content to 360pt, applied space-between-style layout with 24pt side padding, kept prayer icon+name grouped on the left, reserved a fixed 120pt empty center notch-safe zone, and reduced typography size
+- 2026-02-14: Opening animation on `feature/dynamic-island-open-animation` — starts at fixed 300pt notch width, expands to 360pt with a spring over 300ms from center, then reveals content
 - Styling refinement branch: `feature/dynamic-island-styling` — updates to match design reference
 
 ## Open Issues
