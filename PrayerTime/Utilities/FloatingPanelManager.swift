@@ -4,7 +4,9 @@ import SwiftUI
 @MainActor
 final class FloatingPanelManager {
 
-    private let panelWidth: CGFloat = 360
+    private let expandedPanelWidth: CGFloat = 360
+    private let collapsedPanelWidth: CGFloat = 300
+    private let openAnimationDuration: TimeInterval = 0.3
     private let minimumPanelHeight: CGFloat = 28
     private let fallbackPanelHeight: CGFloat = 52
 
@@ -20,8 +22,10 @@ final class FloatingPanelManager {
             prayerName: prayerName,
             prayerSymbol: prayerSymbol,
             prayerTime: prayerTime,
-            panelWidth: panelWidth,
+            expandedWidth: expandedPanelWidth,
+            collapsedWidth: collapsedPanelWidth,
             panelHeight: panelHeight,
+            openAnimationDuration: openAnimationDuration,
             onDismiss: { [weak self] in
                 self?.dismiss()
                 onDismiss()
@@ -29,7 +33,7 @@ final class FloatingPanelManager {
         )
 
         let hostingView = NSHostingView(rootView: view)
-        hostingView.frame = NSRect(x: 0, y: 0, width: panelWidth, height: panelHeight)
+        hostingView.frame = NSRect(x: 0, y: 0, width: expandedPanelWidth, height: panelHeight)
 
         let floatingPanel = FloatingPanel(contentRect: hostingView.frame)
         floatingPanel.contentView = hostingView
