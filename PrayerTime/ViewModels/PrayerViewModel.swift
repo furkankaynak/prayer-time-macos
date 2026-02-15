@@ -181,13 +181,14 @@ final class PrayerViewModel: ObservableObject {
 
     // MARK: - Floating Panel
 
-    private var floatingPanelShownForPrayer: Prayer?
+    private var dismissedPanelForPrayerTime: Date?
 
     private func checkFloatingPanelTrigger(now: Date) {
         guard settingsViewModel.showFloatingPanel,
-              let prayer = nextPrayer,
+              nextPrayer != nil,
               let time = nextPrayerTime else {
             shouldShowFloatingPanel = false
+            dismissedPanelForPrayerTime = nil
             return
         }
 
@@ -198,18 +199,29 @@ final class PrayerViewModel: ObservableObject {
 
         let minutesBefore = Double(settingsViewModel.notificationMinutesBefore)
         let triggerTime = time.addingTimeInterval(-minutesBefore * 60)
+        let isInNotifyWindow = now >= triggerTime && now < time
 
-        if now >= triggerTime && now < time && floatingPanelShownForPrayer != prayer {
-            shouldShowFloatingPanel = true
-            floatingPanelShownForPrayer = prayer
+        if dismissedPanelForPrayerTime != nil,
+           dismissedPanelForPrayerTime != time {
+            dismissedPanelForPrayerTime = nil
+        }
+
+        if isInNotifyWindow {
+            shouldShowFloatingPanel = dismissedPanelForPrayerTime != time
         } else if now >= time {
             shouldShowFloatingPanel = false
+            if dismissedPanelForPrayerTime == time {
+                dismissedPanelForPrayerTime = nil
+            }
         } else {
             shouldShowFloatingPanel = false
         }
     }
 
     func dismissFloatingPanel() {
+        if let time = nextPrayerTime {
+            dismissedPanelForPrayerTime = time
+        }
         shouldShowFloatingPanel = false
     }
 

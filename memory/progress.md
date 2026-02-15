@@ -76,6 +76,7 @@
 - Dynamic Island styling refinement — branch `feature/dynamic-island-styling` (capsule shape, #070707 surface, rim light, soft shadow)
 - Dynamic Island layout refinement on main — menu-bar-height panel, wider 360pt content, space-between layout with 24pt side padding, icon+name grouped on left, 120pt empty center notch-safe zone, smaller typography
 - Dynamic Island opening animation — branch `feature/dynamic-island-open-animation` (fixed 300pt collapsed width -> 360pt spring expansion in 300ms, content reveal after expansion)
+- Dynamic Island bugfixes — branch `fix/dynamic-island-notify-window-fullscreen` (notify-window persistence when always-show is off, fullscreen compact 4pt handle + hover expand behavior, concrete fullscreen detection policy)
 - FloatingPanel.swift: `level = .statusBar` + `screen.frame` positioning committed to main (was previously uncommitted)
 
 ## Remaining Phases
@@ -87,4 +88,4 @@ _All phases complete._
 - Localization
 
 ## Last Updated
-2026-02-14 — Finalized Dynamic Island opening animation (300pt -> 360pt spring in 300ms with post-expand content reveal); kill/rebuild/run verified
+2026-02-14 — Implemented concrete fullscreen detection policy (menu bar state + active-space signal + screen-filling window coverage, with short latch) and applied it to live Dynamic Island visibility switching

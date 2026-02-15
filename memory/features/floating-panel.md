@@ -41,6 +41,8 @@
 - Post-phase: `level` changed from `.floating` to `.statusBar`, positioning from `visibleFrame` to `screen.frame`
 - 2026-02-14: Updated panel to derive height from menu bar height, widened content to 360pt, applied space-between-style layout with 24pt side padding, kept prayer icon+name grouped on the left, reserved a fixed 120pt empty center notch-safe zone, and reduced typography size
 - 2026-02-14: Opening animation on `feature/dynamic-island-open-animation` — starts at fixed 300pt notch width, expands to 360pt with a spring over 300ms from center, then reveals content
+- 2026-02-14: Fix branch `fix/dynamic-island-notify-window-fullscreen` — notify-window visibility now persists through the full trigger window unless dismissed; fullscreen mode uses a 4pt compact top handle that expands on hover and collapses on leave delay
+- 2026-02-14: Fullscreen detection policy updated: fullscreen mode is enabled when a frontmost screen-filling window is detected OR when menu bar is hidden right after active-space change; state is polled while panel is visible and latched briefly to prevent flicker
 - Styling refinement branch: `feature/dynamic-island-styling` — updates to match design reference
 
 ## Open Issues
