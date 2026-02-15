@@ -88,4 +88,4 @@ _All phases complete._
 - Localization
 
 ## Last Updated
-2026-02-14 — Implemented concrete fullscreen detection policy (menu bar state + active-space signal + screen-filling window coverage, with short latch) and applied it to live Dynamic Island visibility switching
+2026-02-14 — Fixed fullscreen detection using private CGS API (CGSCopyManagedDisplaySpaces) after confirming all public APIs (currentSystemPresentationOptions, NSScreen.visibleFrame, CGWindowList) are broken for LSUIElement + canJoinAllSpaces + sandboxed apps. Added animated transitions between full and compact modes. Merged to main.

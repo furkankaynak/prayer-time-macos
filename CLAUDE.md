@@ -72,6 +72,33 @@ Branch naming: `feature/phase-5-settings-view`, `feature/phase-6-floating-panel`
 | Maghrib  | `sunset.fill`          |
 | Isha     | `moon.stars.fill`      |
 
+## macOS API Constraints for This App
+
+This app has a unique combination of properties (`LSUIElement`, `.nonactivatingPanel`, `.canJoinAllSpaces`, App Sandbox) that breaks most standard macOS APIs. Before using any system API, check against these known dead ends:
+
+| API | Status | Why it fails |
+|---|---|---|
+| `NSApplication.shared.currentSystemPresentationOptions` | **Dead** | Always returns `rawValue = 0` for LSUIElement apps. Does not reflect the active app's state. |
+| `NSScreen.visibleFrame` (per-space) | **Dead** | Returns the same values on every space when the app uses `.canJoinAllSpaces`. |
+| `CGWindowListCopyWindowInfo` | **Dead** | App Sandbox blocks enumeration of other apps' windows. Only returns own windows. |
+| `CGSCopyManagedDisplaySpaces` (private) | **Works** | Queries the window server directly. Returns current space type (4 = fullscreen). The only reliable fullscreen detection for this app type. |
+
+**Rule**: When a public API seems like the right answer based on Apple's docs, verify it with debug logging before building a feature on it. Apple's documentation often describes behavior for standard activating apps, not LSUIElement/agent apps.
+
+## Debugging Methodology
+
+When fixing bugs in this codebase, follow this methodology — especially for macOS system integration issues where API behavior may differ from documentation:
+
+1. **Read the code** — understand the full detection/logic flow end-to-end before changing anything. Trace from the trigger (e.g., space change notification) through to the UI effect.
+2. **Hypothesize** — form a specific, testable theory about the root cause based on code reading and API docs.
+3. **Instrument** — add `os_log` logging (at `.notice` level or higher — `.debug` is NOT persisted by macOS unified logging) at the decision points to capture actual runtime values.
+4. **Observe** — build, run, reproduce the bug, then query logs: `/usr/bin/log show --process PrayerTime --last 2m --debug --info 2>&1 | grep <keyword>`
+5. **Analyze** — compare expected vs actual values in the logs. The data tells you which signal is broken.
+6. **Fix** — implement the minimal change that addresses the confirmed root cause. Don't guess.
+7. **Verify** — build, run, test the exact scenario that was broken.
+
+**Key principle**: Never iterate blindly. One round of instrumented logging reveals more than five rounds of "try this API instead." Logs turn a mystery into a data problem.
+
 ## Edge Cases to Always Consider
 
 - **After Isha**: Next prayer is tomorrow's Fajr — must calculate tomorrow's times
